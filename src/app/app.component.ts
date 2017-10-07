@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +10,11 @@ import * as mapboxgl from 'mapbox-gl';
 export class AppComponent implements OnInit {
   title = 'app';
 
-  constructor() {
-    console.log(mapboxgl);
-  }
+  constructor() {}
 
   ngOnInit() {
     console.log(mapboxgl);
-    // mapboxgl.accessToken =
-    //   'pk.eyJ1IjoibWF0dHpoZW5nMjUiLCJhIjoiY2o1Y3B3YzBrMGNsZDJ3bzg1ZDBjOGxvbiJ9.HjOovjGYk7y6ExHFt3Rv2w';
+    mapboxgl.accessToken = environment.mapbox.accessToken;
     // const map = new mapboxgl.Map({
     //   container: '<your HTML element id>',
     //   style: 'mapbox://styles/mapbox/streets-v9',
