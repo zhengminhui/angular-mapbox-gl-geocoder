@@ -118,7 +118,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "h1 {\n  font-size: 22px;\n  margin: 0;\n  font-weight: 400;\n  line-height: 20px;\n  padding: 20px 2px;\n}\n\na {\n  color: #404040;\n  text-decoration: none;\n}\n\na:hover {\n  color: #101010;\n}\n\n.sidebar {\n  position: absolute;\n  width: 33.3333%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  overflow: hidden;\n  border-right: 1px solid rgba(0, 0, 0, 0.25);\n}\n\n.pad2 {\n  padding: 20px;\n}\n\n.map {\n  position: absolute;\n  left: 33.3333%;\n  width: 66.6666%;\n  top: 0;\n  bottom: 0;\n}\n\n.heading {\n  background: #fff;\n  border-bottom: 1px solid #eee;\n  height: 60px;\n  line-height: 60px;\n  padding: 0 10px;\n}\n\n.listings {\n  height: 100%;\n  overflow: auto;\n  padding-bottom: 60px;\n}\n\n.listings .item {\n  display: block;\n  border-bottom: 1px solid #eee;\n  padding: 10px;\n  text-decoration: none;\n}\n\n.listings .item:last-child {\n  border-bottom: none;\n}\n\n.listings .item .title {\n  display: block;\n  color: #00853e;\n  font-weight: 700;\n}\n\n.listings .item .title small {\n  font-weight: 400;\n}\n\n.listings .item.active .title,\n.listings .item .title:hover {\n  color: #8cc63f;\n}\n\n.listings .item.active {\n  background-color: #f8f8f8;\n}\n\n.marker {\n  border: none;\n  cursor: pointer;\n  height: 56px;\n  width: 56px;\n  background-image: url(" + __webpack_require__("../../../../../src/assets/img/marker.png") + ");\n  background-color: rgba(0, 0, 0, 0);\n}\n\n.mapboxgl-popup {\n  padding-bottom: 50px;\n}\n\n.mapboxgl-popup-close-button {\n  display: none;\n}\n\n.mapboxgl-popup-content {\n  font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;\n  padding: 0;\n  width: 180px;\n}\n\n.mapboxgl-popup-content-wrapper {\n  padding: 1%;\n}\n\n.mapboxgl-popup-content h3 {\n  background: #91c949;\n  color: #fff;\n  margin: 0;\n  display: block;\n  padding: 10px;\n  border-radius: 3px 3px 0 0;\n  font-weight: 700;\n  margin-top: -15px;\n}\n\n.mapboxgl-popup-content h4 {\n  margin: 0;\n  display: block;\n  padding: 10px;\n  font-weight: 400;\n}\n\n.mapboxgl-popup-content div {\n  padding: 10px;\n}\n\n.mapboxgl-container .leaflet-marker-icon {\n  cursor: pointer;\n}\n\n.mapboxgl-popup-anchor-top > .mapboxgl-popup-content {\n  margin-top: 15px;\n}\n\n.mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {\n  border-bottom-color: #91c949;\n}\n\n::-webkit-scrollbar {\n  width: 3px;\n  height: 3px;\n  border-left: 0;\n  background: rgba(0, 0, 0, 0.1);\n}\n\n::-webkit-scrollbar-track {\n  background: none;\n}\n\n::-webkit-scrollbar-thumb {\n  background: #00853e;\n  border-radius: 0;\n}\n\n.clearfix {\n  display: block;\n}\n\n.clearfix::after {\n  content: '.';\n  display: block;\n  height: 0;\n  clear: both;\n  visibility: hidden;\n}\n", ""]);
+exports.push([module.i, "h1 {\n  font-size: 22px;\n  margin: 0;\n  font-weight: 400;\n  line-height: 20px;\n  padding: 20px 2px;\n}\n\na {\n  color: #404040;\n  text-decoration: none;\n}\n\na:hover {\n  color: #101010;\n}\n\n.sidebar {\n  position: absolute;\n  width: 33.3333%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  overflow: hidden;\n  border-right: 1px solid rgba(0, 0, 0, 0.25);\n}\n\n.pad2 {\n  padding: 20px;\n}\n\n.map {\n  position: absolute;\n  left: 33.3333%;\n  width: 66.6666%;\n  top: 0;\n  bottom: 0;\n}\n\n.heading {\n  background: #fff;\n  border-bottom: 1px solid #eee;\n  height: 60px;\n  line-height: 60px;\n  padding: 0 10px;\n}\n\n.listings {\n  height: 100%;\n  overflow: auto;\n  padding-bottom: 60px;\n}\n\n.listings .item {\n  display: block;\n  border-bottom: 1px solid #eee;\n  padding: 10px;\n  text-decoration: none;\n}\n\n.listings .item:last-child {\n  border-bottom: none;\n}\n\n.listings .item .title {\n  display: block;\n  color: #00853e;\n  font-weight: 700;\n}\n\n.listings .item .title small {\n  font-weight: 400;\n}\n\n.listings .item.active .title,\n.listings .item .title:hover {\n  color: #8cc63f;\n}\n\n.listings .item.active {\n  background-color: #f8f8f8;\n}\n\n.marker {\n  border: none;\n  cursor: pointer;\n  height: 56px;\n  width: 56px;\n  background-image: url(" + __webpack_require__("../../../../../src/assets/img/marker.png") + ");\n  background-color: rgba(0, 0, 0, 0);\n}\n\n.mapboxgl-popup {\n  padding-bottom: 50px;\n}\n\n.mapboxgl-popup-close-button {\n  display: none;\n}\n\n.mapboxgl-popup-content {\n  font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;\n  padding: 0;\n  width: 180px;\n}\n\n.mapboxgl-popup-content-wrapper {\n  padding: 1%;\n}\n\n.mapboxgl-popup-content h3 {\n  background: #91c949;\n  color: #fff;\n  margin: 0;\n  display: block;\n  padding: 10px;\n  border-radius: 3px 3px 0 0;\n  font-weight: 700;\n  margin-top: -15px;\n}\n\n.mapboxgl-popup-content h4 {\n  margin: 0;\n  display: block;\n  padding: 10px;\n  font-weight: 400;\n}\n\n.mapboxgl-popup-content div {\n  padding: 10px;\n}\n\n.mapboxgl-container .leaflet-marker-icon {\n  cursor: pointer;\n}\n\n.mapboxgl-popup-anchor-top > .mapboxgl-popup-content {\n  margin-top: 15px;\n}\n\n.mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {\n  border-bottom-color: #91c949;\n}\n\n.mapboxgl-ctrl-geocoder {\n  border: 0;\n  border-radius: 0;\n  position: relative;\n  top: 0;\n  width: 800px;\n  margin-top: 0;\n}\n\n.mapboxgl-ctrl-geocoder > div {\n  min-width: 100%;\n  margin-left: 0;\n}\n\n::-webkit-scrollbar {\n  width: 3px;\n  height: 3px;\n  border-left: 0;\n  background: rgba(0, 0, 0, 0.1);\n}\n\n::-webkit-scrollbar-track {\n  background: none;\n}\n\n::-webkit-scrollbar-thumb {\n  background: #00853e;\n  border-radius: 0;\n}\n\n.clearfix {\n  display: block;\n}\n\n.clearfix::after {\n  content: '.';\n  display: block;\n  height: 0;\n  clear: both;\n  visibility: hidden;\n}\n", ""]);
 
 // exports
 
@@ -143,8 +143,10 @@ module.exports = "<div class=\"sidebar\">\n  <div class=\"heading\">\n    <h1>Ou
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_mapbox_gl__ = __webpack_require__("../../../../mapbox-gl/dist/mapbox-gl.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_mapbox_gl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_mapbox_gl__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__assets_data_sweetgreen__ = __webpack_require__("../../../../../src/assets/data/sweetgreen.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mapbox_mapbox_gl_geocoder__ = __webpack_require__("../../../../@mapbox/mapbox-gl-geocoder/lib/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mapbox_mapbox_gl_geocoder___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__mapbox_mapbox_gl_geocoder__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__assets_data_sweetgreen__ = __webpack_require__("../../../../../src/assets/data/sweetgreen.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -158,17 +160,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+// import { distance } from '@turf/turf';
 var MapboxComponent = (function () {
     function MapboxComponent() {
     }
     MapboxComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.storeData = __WEBPACK_IMPORTED_MODULE_3__assets_data_sweetgreen__["a" /* DATA */].features;
+        this.storeData = __WEBPACK_IMPORTED_MODULE_4__assets_data_sweetgreen__["a" /* DATA */].features;
         this.selectedLink = null;
-        __WEBPACK_IMPORTED_MODULE_1_mapbox_gl__["accessToken"] = __WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].mapbox.accessToken;
+        __WEBPACK_IMPORTED_MODULE_1_mapbox_gl__["accessToken"] = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].mapbox.accessToken;
         this.map = new __WEBPACK_IMPORTED_MODULE_1_mapbox_gl__["Map"]({
             container: 'map',
-            style: 'mapbox://styles/mapbox/light-v9',
+            style: 'mapbox://styles/mapbox/dark-v9',
             center: [-77.034084, 38.909671],
             zoom: 14,
             scrollZoom: false,
@@ -176,7 +180,30 @@ var MapboxComponent = (function () {
         this.map.on('load', function (e) {
             _this.map.addSource('places', {
                 type: 'geojson',
-                data: __WEBPACK_IMPORTED_MODULE_3__assets_data_sweetgreen__["a" /* DATA */],
+                data: __WEBPACK_IMPORTED_MODULE_4__assets_data_sweetgreen__["a" /* DATA */],
+            });
+            var geocoder = new __WEBPACK_IMPORTED_MODULE_2__mapbox_mapbox_gl_geocoder___default.a({
+                accessToken: __WEBPACK_IMPORTED_MODULE_1_mapbox_gl__["accessToken"],
+                bbox: [-77.210763, 38.803367, -76.853675, 39.052643],
+            });
+            _this.map.addControl(geocoder, 'top-left');
+            _this.map.addSource('single-point', {
+                type: 'geojson',
+                data: {
+                    type: 'FeatureCollection',
+                    features: [],
+                },
+            });
+            _this.map.addLayer({
+                id: 'point',
+                source: 'single-point',
+                type: 'circle',
+                paint: {
+                    'circle-radius': 10,
+                    'circle-color': '#007cbf',
+                    'circle-stroke-width': 3,
+                    'circle-stroke-color': '#fff',
+                },
             });
         });
         this.storeData.forEach(function (marker, index) {
@@ -191,11 +218,8 @@ var MapboxComponent = (function () {
                 .addTo(_this.map);
             el.addEventListener('click', function (e) {
                 var activeItem = document.getElementsByClassName('active');
-                // 1. Fly to the point
                 _this.flyToStore(marker);
-                // 2. Close all other popups and display popup for clicked store
                 _this.createPopUp(marker);
-                // 3. Highlight listing in sidebar (and remove highlight for all other listings)
                 e.stopPropagation();
                 _this.selectedLink = index;
             });
@@ -581,6 +605,13 @@ Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* pl
 
 module.exports = __webpack_require__("../../../../../src/main.ts");
 
+
+/***/ }),
+
+/***/ 1:
+/***/ (function(module, exports) {
+
+/* (ignored) */
 
 /***/ })
 

@@ -27,6 +27,33 @@ if(false) {
 
 /***/ }),
 
+/***/ "../../../../@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("../../../../css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!../../../../postcss-loader/index.js?{\"ident\":\"postcss\"}!../../../../@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css");
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__("../../../../style-loader/addStyles.js")(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../css-loader/index.js??ref--8-1!../../../postcss-loader/index.js??postcss!./mapbox-gl-geocoder.css", function() {
+			var newContent = require("!!../../../css-loader/index.js??ref--8-1!../../../postcss-loader/index.js??postcss!./mapbox-gl-geocoder.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
 /***/ "../../../../css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!../../../../postcss-loader/index.js?{\"ident\":\"postcss\"}!../../../../../src/styles.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -36,6 +63,21 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 // module
 exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "../../../../css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!../../../../postcss-loader/index.js?{\"ident\":\"postcss\"}!../../../../@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "/* Basics */\n.mapboxgl-ctrl-geocoder,\n.mapboxgl-ctrl-geocoder *,\n.mapboxgl-ctrl-geocoder *:after,\n.mapboxgl-ctrl-geocoder *:before {\n  box-sizing:border-box;\n  }\n.mapboxgl-ctrl-geocoder {\n  font:15px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;\n  position:relative;\n  background-color:white;\n  width:33.3333%;\n  min-width:240px;\n  max-width:360px;\n  z-index:1;\n  border-radius:3px;\n  }\n\n.mapboxgl-ctrl-geocoder input[type='text'] {\n  font-size:12px;\n  width:100%;\n  border:0;\n  background-color:transparent;\n  height:40px;\n  margin:0;\n  color:rgba(0,0,0,.5);\n  padding:10px 10px 10px 40px;\n  text-overflow:ellipsis;\n  white-space:nowrap;\n  overflow:hidden;\n  }\n  .mapboxgl-ctrl-geocoder input:focus {\n    color:rgba(0,0,0,.75);\n    outline:0;\n    box-shadow:none;\n    outline:thin dotted\\8;\n    }\n\n.mapboxgl-ctrl-geocoder .geocoder-icon-search {\n  position:absolute;\n  top:10px;\n  left:10px;\n  }\n.mapboxgl-ctrl-geocoder button {\n  padding:0;\n  margin:0;\n  background-color:#fff;\n  border:none;\n  cursor:pointer;\n  }\n.mapboxgl-ctrl-geocoder .geocoder-pin-right * {\n  background-color:#fff;\n  z-index:2;\n  position:absolute;\n  right:10px;\n  top:10px;\n  display:none;\n  }\n\n.mapboxgl-ctrl-geocoder,\n.mapboxgl-ctrl-geocoder ul {\n  box-shadow: 0 0 0 2px rgba(0,0,0,0.1);\n  }\n\n/* Suggestions */\n.mapboxgl-ctrl-geocoder ul {\n  background-color:#fff;\n  border-radius: 0 0 3px 3px;\n  left:0;\n  list-style:none;\n  margin:0;\n  padding:0;\n  position:absolute;\n  width:100%;\n  top:100%;\n  z-index:1000;\n  overflow:hidden;\n  font-size:12px;\n  }\n  .mapboxgl-ctrl-bottom-left .mapboxgl-ctrl-geocoder ul,\n  .mapboxgl-ctrl-bottom-right .mapboxgl-ctrl-geocoder ul {\n    top:auto;\n    bottom:100%;\n    }\n  .mapboxgl-ctrl-geocoder ul > li > a {\n    clear:both;\n    cursor:default;\n    display:block;\n    padding:5px 10px;\n    white-space:nowrap;\n    overflow:hidden;\n    text-overflow:ellipsis;\n    white-space:nowrap;\n    border-bottom:1px solid rgba(0,0,0,0.1);\n    color:#404040;\n    }\n    .mapboxgl-ctrl-geocoder ul > li:last-child > a { border-bottom:none; }\n    .mapboxgl-ctrl-geocoder ul > li > a:hover {\n      color:#202020;\n      background-color:#f3f3f3;\n      text-decoration:none;\n      cursor:pointer;\n      }\n    .mapboxgl-ctrl-geocoder ul > li.active > a {\n      color:#202020;\n      background-color:#e3e3e3;\n      text-decoration:none;\n      cursor:pointer;\n      }\n\n@-webkit-keyframes rotate { from { -webkit-transform: rotate(0deg); } to { -webkit-transform: rotate(360deg); } }\n        @keyframes rotate { from { -webkit-transform: rotate(0deg); transform: rotate(0deg); } to { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }\n\n/* icons */\n.geocoder-icon {\n  display:inline-block;\n  width:20px;\n  height:20px;\n  vertical-align:middle;\n  speak:none;\n  background-repeat:no-repeat;\n  }\n  .geocoder-icon-search {\n    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmVyc2lvbj0iMS4xIj4NCiAgPHBhdGggZD0iTTguNSA0QzYgNCA0IDYgNCA4LjUgNCAxMSA2IDEzIDguNSAxMyA5LjQgMTMgMTAuMiAxMi44IDEwLjggMTIuM0wxMC45IDEyLjMgMTQuMyAxNS43QzE0LjUgMTUuOSAxNC43IDE2IDE1IDE2IDE1LjYgMTYgMTYgMTUuNiAxNiAxNSAxNiAxNC43IDE1LjkgMTQuNSAxNS43IDE0LjNMMTIuMyAxMC45IDEyLjMgMTAuOEMxMi44IDEwLjIgMTMgOS40IDEzIDguNSAxMyA2IDExIDQgOC41IDR6TTguNSA1LjVDMTAuMiA1LjUgMTEuNSA2LjggMTEuNSA4LjUgMTEuNSAxMC4yIDEwLjIgMTEuNSA4LjUgMTEuNSA2LjggMTEuNSA1LjUgMTAuMiA1LjUgOC41IDUuNSA2LjggNi44IDUuNSA4LjUgNS41eiIgZmlsbD0iIzAwMCIvPg0KPC9zdmc+);\n    }\n  .geocoder-icon-close {\n    background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCIgdmVyc2lvbj0iMS4xIiBoZWlnaHQ9IjIwIiB3aWR0aD0iMjAiPg0KICA8cGF0aCBkPSJtNSA1IDAgMS41IDMuNSAzLjUtMy41IDMuNSAwIDEuNSAxLjUgMCAzLjUtMy41IDMuNSAzLjUgMS41IDAgMC0xLjUtMy41LTMuNSAzLjUtMy41IDAtMS41LTEuNSAwLTMuNSAzLjUtMy41LTMuNS0xLjUgMHoiIGZpbGw9IiMwMDAiLz4NCjwvc3ZnPg==);\n    }\n  .geocoder-icon-loading {\n    background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB2aWV3Qm94PSIwIDAgMjAgMjAiPjxwYXRoIGQ9Im0xMCAyIDAgMy4zYzIuNiAwIDQuNyAyLjEgNC43IDQuN2wzLjMgMGMwLTQuNC0zLjYtOC04LTh6IiBmaWxsPSIjMDAwIi8+PHBhdGggZD0iTTEwIDJDNi44IDIgMy43IDQuMSAyLjYgNy4xIDEuNCAxMCAyLjEgMTMuNiA0LjUgMTUuOGMyLjQgMi40IDYuNCAyLjkgOS40IDEuMiAyLjUtMS40IDQuMi00LjIgNC4yLTctMS4xIDAtMi4yIDAtMy4zIDAgMC4xIDIuMi0xLjcgNC4zLTMuOCA0LjZDOC43IDE1IDYuNCAxMy44IDUuNyAxMS43IDQuOCA5LjcgNS42IDcuMSA3LjYgNiA4LjMgNS42IDkuMSA1LjMgMTAgNS4zYzAtMS4xIDAtMi4yIDAtMy4zeiIgc3R5bGU9ImZpbGw6IzAwMDtvcGFjaXR5OjAuMiIvPjwvc3ZnPg==);\n    -webkit-animation: rotate 400ms linear infinite;\n            animation: rotate 400ms linear infinite;\n    }\n", ""]);
 
 // exports
 
@@ -378,13 +420,14 @@ function updateLink(linkElement, obj) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("../../../../../src/styles.css");
+__webpack_require__("../../../../../src/styles.css");
+module.exports = __webpack_require__("../../../../@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css");
 
 
 /***/ })
 
-},[2]);
+},[3]);
 //# sourceMappingURL=styles.bundle.js.map
