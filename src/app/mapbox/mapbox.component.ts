@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+// import MapboxGeocoder from 'mapbox-gl-geocoder';
 import { environment } from '../../environments/environment';
 import { DATA } from '../../assets/data/sweetgreen';
 
@@ -32,6 +34,11 @@ export class MapboxComponent implements OnInit {
         type: 'geojson',
         data: DATA,
       });
+      const geocoder = new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        bbox: [-77.210763, 38.803367, -76.853675, 39.052643]
+      });
+      this.map.addControl(geocoder, 'top-left');
     });
 
     this.storeData.forEach((marker, index) => {
