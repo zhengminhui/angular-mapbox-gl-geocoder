@@ -1,9 +1,9 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
-// import MapboxGeocoder from 'mapbox-gl-geocoder';
 import { environment } from '../../environments/environment';
 import { DATA } from '../../assets/data/sweetgreen';
+// import { distance } from '@turf/turf';
 
 @Component({
   selector: 'app-mapbox',
@@ -24,7 +24,7 @@ export class MapboxComponent implements OnInit {
     mapboxgl.accessToken = environment.mapbox.accessToken;
     this.map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/light-v9',
+      style: 'mapbox://styles/mapbox/dark-v9',
       center: [-77.034084, 38.909671], // [lng, lat]
       zoom: 14, // starting zoom
       scrollZoom: false,
@@ -36,9 +36,27 @@ export class MapboxComponent implements OnInit {
       });
       const geocoder = new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
-        bbox: [-77.210763, 38.803367, -76.853675, 39.052643]
+        bbox: [-77.210763, 38.803367, -76.853675, 39.052643],
       });
       this.map.addControl(geocoder, 'top-left');
+      this.map.addSource('single-point', {
+        type: 'geojson',
+        data: {
+          type: 'FeatureCollection',
+          features: [], // Notice that initially there are no features
+        },
+      });
+      this.map.addLayer({
+        id: 'point',
+        source: 'single-point',
+        type: 'circle',
+        paint: {
+          'circle-radius': 10,
+          'circle-color': '#007cbf',
+          'circle-stroke-width': 3,
+          'circle-stroke-color': '#fff',
+        },
+      });
     });
 
     this.storeData.forEach((marker, index) => {
@@ -54,11 +72,8 @@ export class MapboxComponent implements OnInit {
 
       el.addEventListener('click', e => {
         const activeItem = document.getElementsByClassName('active');
-        // 1. Fly to the point
         this.flyToStore(marker);
-        // 2. Close all other popups and display popup for clicked store
         this.createPopUp(marker);
-        // 3. Highlight listing in sidebar (and remove highlight for all other listings)
         e.stopPropagation();
         this.selectedLink = index;
       });
