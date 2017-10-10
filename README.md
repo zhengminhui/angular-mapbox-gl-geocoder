@@ -9,7 +9,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## Deploy to gh-pages branch
 
 ```shell
-ng build --prod --base-href "https://USERNAME.github.io/REPOSITORY_NAME/"
+ng build --prod --base-href "http://zhengminhui.com/angular-mapbox-gl-geocoder/"
 angular-cli-ghpages [OPTIONS]
 ```
 
