@@ -16,7 +16,8 @@ export class MapboxComponent implements OnInit {
   map: mapboxgl.Map;
   selectedLink: number;
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit() {
     this.storeData = DATA.features;
@@ -27,7 +28,7 @@ export class MapboxComponent implements OnInit {
       style: 'mapbox://styles/mapbox/dark-v9',
       center: [-77.034084, 38.909671], // [lng, lat]
       zoom: 14, // starting zoom
-      scrollZoom: false,
+      scrollZoom: true,
     });
     this.map.on('load', e => {
       this.map.addSource('places', {
@@ -88,9 +89,7 @@ export class MapboxComponent implements OnInit {
   }
 
   createPopUp(currentFeature) {
-    console.log('createPopUp', currentFeature);
     const popUps = document.getElementsByClassName('mapboxgl-popup');
-    console.log('popUps', popUps);
     // Check if there is already a popup on the map and if so, remove it
     if (popUps[0]) {
       popUps[0].remove();
