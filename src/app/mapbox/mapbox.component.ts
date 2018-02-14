@@ -1,9 +1,10 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
-import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+// if not using * as, will cause MapboxGeocoder is undefined
+import * as MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import { environment } from '../../environments/environment';
 import { DATA } from '../../assets/data/sweetgreen';
-// import { distance } from '@turf/turf';
+import { distance } from '@turf/turf';
 
 @Component({
   selector: 'app-mapbox',
@@ -30,13 +31,14 @@ export class MapboxComponent implements OnInit {
       zoom: 14, // starting zoom
       scrollZoom: true,
     });
-    this.map.on('load', e => {
+    this.map.on('load', (e) => {
       this.map.addSource('places', {
         type: 'geojson',
         data: DATA,
       });
       const geocoder = new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
+        // comment below line will enlarge the range of search result
         bbox: [-77.210763, 38.803367, -76.853675, 39.052643],
       });
       this.map.addControl(geocoder, 'top-left');
@@ -57,6 +59,30 @@ export class MapboxComponent implements OnInit {
           'circle-stroke-width': 3,
           'circle-stroke-color': '#fff',
         },
+      });
+      // evt handler when select search result from search bar
+      geocoder.on('result', (ev) => {
+        const searchResult = ev.result.geometry;
+        this.map.getSource('single-point').setData(searchResult);
+        this.storeData.forEach((store) => {
+          Object.defineProperty(store.properties, 'distance', {
+            value: distance(searchResult, store.geometry),
+            writable: true,
+            enumerable: true,
+            configurable: true
+          });
+        });
+        this.storeData.sort((a, b) => {
+          if (a.properties.distance > b.properties.distance) {
+            return 1;
+          }
+          if (a.properties.distance < b.properties.distance) {
+            return -1;
+          }
+          // a must be equal to b
+          return 0;
+        });
+        console.log(this.storeData);
       });
     });
 
@@ -96,7 +122,9 @@ export class MapboxComponent implements OnInit {
     }
     const popup = new mapboxgl.Popup({ closeOnClick: false })
       .setLngLat(currentFeature.geometry.coordinates)
-      .setHTML('<h3>Sweetgreen</h3>' + '<h4>' + currentFeature.properties.address + '</h4>')
+      .setHTML(
+        `<h3>Sweetgreen</h3><h4>${currentFeature.properties.address}</h4>`
+      )
       .addTo(this.map);
   }
 
@@ -105,4 +133,5 @@ export class MapboxComponent implements OnInit {
     this.createPopUp(currentFeature);
     this.selectedLink = index;
   }
+
 }
