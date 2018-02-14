@@ -1,5 +1,9 @@
 # Angular MapBox Gl
 
+<br>
+<img src="hhttps://github.com/wanzaiwanger/angular-mapbox-gl-geocoder/tree/master/src/assets/img/geocoder.gif" width="700px"/>
+<br>
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -15,3 +19,11 @@ angular-cli-ghpages [OPTIONS]
 
 `https://www.mapbox.com/help/building-a-store-locator/`   
 `https://www.mapbox.com/help/geocode-and-sort-stores/`
+
+## Contributing
+
+Pull requests for new features, bug fixes, and suggestions are welcome!
+
+## License
+
+[MIT](https://github.com/wanzaiwanger/angular-mapbox-gl-geocoder/blob/master/LICENSE)
