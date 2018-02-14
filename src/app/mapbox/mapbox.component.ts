@@ -64,25 +64,9 @@ export class MapboxComponent implements OnInit {
       geocoder.on('result', (ev) => {
         const searchResult = ev.result.geometry;
         this.map.getSource('single-point').setData(searchResult);
-        this.storeData.forEach((store) => {
-          Object.defineProperty(store.properties, 'distance', {
-            value: distance(searchResult, store.geometry),
-            writable: true,
-            enumerable: true,
-            configurable: true
-          });
-        });
-        this.storeData.sort((a, b) => {
-          if (a.properties.distance > b.properties.distance) {
-            return 1;
-          }
-          if (a.properties.distance < b.properties.distance) {
-            return -1;
-          }
-          // a must be equal to b
-          return 0;
-        });
-        console.log(this.storeData);
+        this.buildLocationList(searchResult);
+        this.sortLonLat(0, searchResult);
+        this.createPopUp(this.storeData[0]);
       });
     });
 
@@ -105,6 +89,63 @@ export class MapboxComponent implements OnInit {
         this.selectedLink = index;
       });
     });
+  }
+
+  sortLonLat(storeIdentifier, searchResult) {
+    const lats = [
+      this.storeData[storeIdentifier].geometry.coordinates[1],
+      searchResult.coordinates[1],
+    ];
+    const lngs = [
+      this.storeData[storeIdentifier].geometry.coordinates[0],
+      searchResult.coordinates[0],
+    ];
+
+    const sortedLngs = lngs.sort(function(a, b){
+      if (a > b) { return 1; }
+      if (a.distance < b.distance) { return -1; }
+      return 0;
+    });
+    const sortedLats = lats.sort(function(a, b){
+      if (a > b) { return 1; }
+      if (a.distance < b.distance) { return -1; }
+      return 0;
+    });
+
+    this.map.fitBounds([
+      [sortedLngs[0], sortedLats[0]],
+      [sortedLngs[1], sortedLats[1]],
+    ], {
+      padding: 100,
+    });
+  }
+
+  buildLocationList(searchResult) {
+    // add distance property to store data
+    this.storeData.forEach((store) => {
+      Object.defineProperty(store.properties, 'distance', {
+        value: distance(searchResult, store.geometry),
+        writable: true,
+        enumerable: true,
+        configurable: true
+      });
+      store.properties['distance'] = this.roundValue(store.properties['distance']);
+    });
+    // sort the location list
+    this.storeData.sort((a, b) => {
+      if (a.properties.distance > b.properties.distance) {
+        return 1;
+      }
+      if (a.properties.distance < b.properties.distance) {
+        return -1;
+      }
+      // a must be equal to b
+      return 0;
+    });
+  }
+
+  private roundValue(val) {
+    return Math.round(val * 100) / 100;
   }
 
   flyToStore(currentFeature) {

@@ -3,10 +3,24 @@
     <h1>Our locations</h1>
   </div>
   <div id="listings" class="listings">
-    <div *ngFor="let item of storeData; let i = index" class="item" [attr.id]="'listing-' + i" [class.active]="selectedLink === i">
-      <a href="#" class="title" (click)="moveAndShowInfo(item, i)">{{item.properties.address}}</a>
+    <div *ngFor="let item of storeData; let i = index"
+         class="item"
+         [attr.id]="'listing-' + i"
+         [class.active]="selectedLink === i">
+      <a href="#"
+         class="title"
+         (click)="moveAndShowInfo(item, i)">
+        {{item.properties.address}}
+      </a>
       <div>
         {{item.properties.city + ' &middot; ' + item.properties.phoneFormatted}}
+        <ng-container *ngIf="item.properties['distance']">
+          <p>
+            <strong>
+              {{ item.properties['distance'] + ' km away'}}
+            </strong>
+          </p>
+        </ng-container>
       </div>
     </div>
   </div>
